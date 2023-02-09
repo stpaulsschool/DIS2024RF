@@ -4,6 +4,19 @@ name = input("What is your name? ")
 print("Hello " + name + " and welcome to my number guessing game!")
 HighScore = 6
 
+def getDifficulty():
+    difficulty = input("")
+
+    totalGuesses = None
+    if difficulty == "1":
+        totalGuesses = 10
+
+    if difficulty == "2":
+        totalGuesses = 6
+    if difficulty == "3":
+        totalGuesses = 4
+    return totalGuesses
+
 while True:
     NOG = 1
     number = random.randint(1, 100)
@@ -12,15 +25,14 @@ while True:
     print("Easy(1)")
     print("Medium(2)")
     print("Hard(3)")
-    difficulty = input()
-    if difficulty = 1:
-        totalGuesses =
+    totalGuesses = getDifficulty()
+
 
 
 
 
     while NOG != 7:
-        guess = int(input("This is guess " + str(NOG) + "/6, please enter your guess... "))
+        guess = int(input("This is guess " + str(NOG) + "/" + str(totalGuesses) + ", please enter your guess... "))
         if guess != number and NOG == 6:
             print("You ran out of guesses...")
         elif guess == number and NOG == 1:
