@@ -15,6 +15,8 @@ def getDifficulty():
         totalGuesses = 6
     if difficulty == "3":
         totalGuesses = 4
+    else:
+        print("Sorry, I do not understand...")
     return totalGuesses
 
 while True:
@@ -31,10 +33,11 @@ while True:
 
 
 
-    while NOG != 7:
+    while NOG != totalGuesses+1:
         guess = int(input("This is guess " + str(NOG) + "/" + str(totalGuesses) + ", please enter your guess... "))
-        if guess != number and NOG == 6:
+        if guess != number and NOG == totalGuesses:
             print("You ran out of guesses...")
+            print("The correct number was " + str(number))
         elif guess == number and NOG == 1:
             print("WOW you guessed it first try, good job!!!")
             break
@@ -47,7 +50,7 @@ while True:
             print("Higher")
         NOG = NOG+1
 
-    if NOG <7:
+    if NOG < totalGuesses+1:
         if HighScore>NOG:
             HighScore = NOG
         print("HighScore (Number Of Guesses):" + str(HighScore))
