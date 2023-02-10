@@ -13,7 +13,7 @@ while True:
     print("Medium(2)")
     print("Hard(3)")
     difficulty = input()
-    if difficulty = 1:
+    if difficulty == "1:
         totalGuesses =
 
 

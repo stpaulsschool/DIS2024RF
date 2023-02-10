@@ -1,22 +1,27 @@
 import random
 ynList = ["yes", "y", "no", "n"]
+difficultyList = ["1", "2", "3"]
 name = input("What is your name? ")
 print("Hello " + name + " and welcome to my number guessing game!")
 HighScore = 6
 
 def getDifficulty():
-    difficulty = input("")
+    difficulty = None
 
+    hasRun = False
+    while difficulty not in difficultyList:
+        if hasRun:
+            print("Sorry, I do not understand...")
+        difficulty = input("")
+        hasRun = True
     totalGuesses = None
     if difficulty == "1":
         totalGuesses = 10
-
     if difficulty == "2":
         totalGuesses = 6
     if difficulty == "3":
         totalGuesses = 4
-    else:
-        print("Sorry, I do not understand...")
+
     return totalGuesses
 
 while True:
@@ -27,14 +32,22 @@ while True:
     print("Easy(1)")
     print("Medium(2)")
     print("Hard(3)")
+    totalGuesses = None
     totalGuesses = getDifficulty()
 
 
 
 
 
+
     while NOG != totalGuesses+1:
-        guess = int(input("This is guess " + str(NOG) + "/" + str(totalGuesses) + ", please enter your guess... "))
+        guess = None
+        while not guess:
+            try:
+                guess = int(input("This is guess " + str(NOG) + "/" + str(totalGuesses) + ", please enter your guess... "))
+            except:
+                print("Sorry, I do not understand...")
+
         if guess != number and NOG == totalGuesses:
             print("You ran out of guesses...")
             print("The correct number was " + str(number))
