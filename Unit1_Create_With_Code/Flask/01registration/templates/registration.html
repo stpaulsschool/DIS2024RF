@@ -12,6 +12,27 @@
             </style>
         </head>
         <body>
+        <h2>User Registration</h2>
 
+        {% for message in fomr.email.errors %}
+            <div><p class="error">{{ message }}</p></div>
+        {% endfor %}
+
+        <form action = "https://127.0.0.1:5000/registration" method=post>
+            <fieldset>
+                {{ form.hidden_tag }}
+                {{ form.email.label }}<br>
+                {{ form.email }}
+                <br><br>
+                {{ form.password.label }}<br>
+                {{ form.password }}
+                <br><br>
+                {{ form.confirm_password.label }}<br>
+                {{ form.confirm_password }}
+                <br><br>
+
+                {{ form.submit}}o
+            </fieldset>
+        </form>
 </body>
 </html>
