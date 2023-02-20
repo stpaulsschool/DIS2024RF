@@ -6,8 +6,8 @@ app.config["SECRET_KEY"] = "utfhukigy789y0uipojuhiopuyg8u9i[ko;lmjilkoh;"
 
 @app.route('/')
 def hello_form():
-    return '<H1>Hello, Form!</H1>'
-
+    form = Registration()
+    return render_template('registration.html', form=form)
 
 @app.route('/registration',methods=['GET','POST'])
 

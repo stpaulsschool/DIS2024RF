@@ -8,8 +8,8 @@ app = Flask(__name__) #Next we create an instance of this class
 def hello_form():
     return "<p>Hello, this is a form!</p>"
 
-#if __name__ == '__main__':
- #   app.run(debug=True)
+if __name__ == '__main__':
+   app.run(debug=True)
     #debug true makes it so if you change html and css you just have to refresh page
     #but if you change python code you have to termitate program and open it again
 
