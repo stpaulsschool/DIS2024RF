@@ -4,7 +4,18 @@ from app import app
 @app.route("/")
 def default():
     return "<h2>Hello.</h2>"
-@app.route("/index")
 
+
+@app.route("/index")
 def index():
-    return "Hello world"
+    user = {'username': 'Reinhard'}
+    return '''
+    <html>
+        <head>
+            <title>Homepage - Microblog</title>
+        </head>
+        <body>
+            <h1>Hello ''' +user['username'] + '''!</h1>
+        </body>
+    </html>
+    '''
